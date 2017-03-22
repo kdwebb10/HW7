@@ -31,8 +31,25 @@ int main(int argc, char *argv[])
 void MaxMin(int numvals, int vals[], int* min, int* max)
 {
 	srand(time(NULL)); //sets your random seed
+	*max = vals[0];
+	*min = vals[0];
 
 	printf("The list of numbers is:\n");
+	for(int i = 0; i < numvals; i++)
+	{
+		//takes values between 10 and 99.
+		vals[i] = 10+(int) (rand() % 90);
+		printf("%d\n", vals[i]); //prints the list
+		
+		if(vals[i] > *max)
+		{
+			*max = vals[i];
+		}
+		if(vals[i] < *min)
+		{
+			*min = vals[i];
+		}
+	}
 
 	printf("The Maximum value in the series is %d\n", *max);
 	printf("The Minimum value in the series is %d\n", *min);

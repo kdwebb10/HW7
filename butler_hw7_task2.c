@@ -3,7 +3,7 @@
  *
  *       Filename:  butler_hw7_task2.c
  *       	Usage:  ./butler_hw7_task2.c
- *    Description:  
+ *    Description: task 2. 
  *
  *        Version:  1.0
  *        Created:  03/21/2017 04:17:43 PM
@@ -15,6 +15,7 @@
 #include <stdlib.h>		/* Standard Library */
 
 /* Function Prototypes */
+void MaxMin(int numvals, int vals[], int* min, int* max);
 
 /* Main Program */
 int main(int argc, char *argv[])

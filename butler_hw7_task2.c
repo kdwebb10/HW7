@@ -13,6 +13,8 @@
  */
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>		/* Standard Library */
+#include <math.h>
+#include <time.h>		/* to gain cpu time */
 
 /* Function Prototypes */
 void MaxMin(int numvals, int vals[], int* min, int* max);
@@ -20,11 +22,11 @@ void MaxMin(int numvals, int vals[], int* min, int* max);
 /* Main Program */
 int main(int argc, char *argv[])
 {
+	int max, min, random[];
+	MaxMin();
 
 	return 0;
 }
-
-
 /* Function Defenitions */
 
 

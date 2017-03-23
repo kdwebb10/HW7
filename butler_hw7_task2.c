@@ -3,7 +3,8 @@
  *
  *       Filename:  butler_hw7_task2.c
  *       	Usage:  ./butler_hw7_task2.c
- *    Description: task 2. 
+ *    Description: task 2. this program lists 10 random numbers
+ *    				and it prints the max and min values from the list
  *
  *        Version:  1.0
  *        Created:  03/21/2017 04:17:43 PM
@@ -13,10 +14,9 @@
  */
 #include <stdio.h>		/* For Standard I/O */
 #include <stdlib.h>		/* Standard Library */
-#include <time.h>		/* to gain cpu time */
+#include <time.h>		/* For CPU Time */
 
 #define MAXNUM 10 //define a max number for list of intagers
-
 /* Function Prototypes */
 void MaxMin(int numvals, int vals[], int* min, int* max);
 
@@ -24,16 +24,16 @@ void MaxMin(int numvals, int vals[], int* min, int* max);
 int main(int argc, char *argv[])
 {
 	int max, min, random[MAXNUM];
-	MaxMin(MAXNUM, &min, &max, random);
+	MaxMin(MAXNUM, &min, &max, random); //calls the function
+	
 	return 0;
 }
+
 /* Function Defenitions */
 void MaxMin(int numvals, int vals[], int* min, int* max)
 {
 	srand(time(NULL)); //sets your random seed
-//	*max = vals[0];
-//	*min = vals[0];
-
+	
 	printf("The list of numbers is:\n");
 	for(int i = 0; i < numvals; i++)
 	{
@@ -41,25 +41,22 @@ void MaxMin(int numvals, int vals[], int* min, int* max)
 		vals[i] = 10+(int) (rand() % 90);
 		printf("%d\n", vals[i]); //prints the list
 	}
-
-	for(int j = 1; j < numvals; j++)
+	for(int x = 1; x < numvals; x++)
 	{
-		if(*min > vals[j])
+		if(*min > vals[x])
 		{
-			*min = vals[j];
+			*min = vals[x];
 		}
 	}
-	for(int i = 1; i < numvals; i++)
+	for(int y = 1; y < numvals; y++)
 	{
-		if(*max < vals[i])
+		if(*max < vals[y])
 		{
-			*max = vals[i];
+			*max = vals[y];
 		}
 	}
 	printf("The Maximum value in the series is %d\n", *max);
 	printf("The Minimum value in the series is %d\n", *min);
-	return;
-
+	
+	return; //returns nothing
 }
-
-
